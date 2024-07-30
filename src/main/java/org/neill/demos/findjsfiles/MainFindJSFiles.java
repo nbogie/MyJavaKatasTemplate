@@ -9,8 +9,9 @@ public class MainFindJSFiles {
     private MainFindJSFiles() {
     }
     public static void main(String[] args) throws IOException {
-        // TODO: Replace the following with your starting path
-        String startPath = "./exampleFiles";
+        // TODO: Replace startPath
+        String startPath = "/Users/neill/Developer/Academy/academy-express-api-starter-js";
+
         System.out.println("For this demo to be interesting, set startPath to point at the top of a directory tree which contains some .js (and .ts) files at different depths");
 
         List<Path> jsTsFiles = findJsTsFiles(startPath);

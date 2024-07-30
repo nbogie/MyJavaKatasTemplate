@@ -13,8 +13,8 @@ public class MainListDir {
 
     public static void main(String[] args) throws IOException {
 
-        // TODO: Replace the following with your starting path
-        String startPath = "./exampleFiles";
+        // TODO: Replace the following with a path on YOUR machine
+        String startPath = "/Users/neill/Developer/Academy/academy-express-api-starter-js";
 
         try (DirectoryStream<Path> dirStream = Files.newDirectoryStream(Paths.get(startPath))) {
             for (Path dirItem : dirStream) {
