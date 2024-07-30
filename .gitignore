@@ -39,3 +39,7 @@ build/
 
 ### folder of generated javadoc
 /javadoc
+
+### SonarLint
+.idea/sonarlint.xml
+.sonarlint/connectedMode.json
