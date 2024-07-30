@@ -1,4 +1,4 @@
-package org.neill.katas.findjsfiles;
+package org.neill.demos.findjsfiles;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -9,9 +9,9 @@ public class MainFindJSFiles {
     private MainFindJSFiles() {
     }
     public static void main(String[] args) throws IOException {
-
         // TODO: Replace the following with your starting path
         String startPath = "./exampleFiles";
+        System.out.println("For this demo to be interesting, set startPath to point at the top of a directory tree which contains some .js (and .ts) files at different depths");
 
         List<Path> jsTsFiles = findJsTsFiles(startPath);
         reportPaths(jsTsFiles);
