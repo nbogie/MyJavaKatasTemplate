@@ -8,6 +8,15 @@ import java.util.stream.Stream;
 public class MainFindJSFiles {
     private MainFindJSFiles() {
     }
+    public static void main(String[] args) throws IOException {
+
+        // TODO: Replace the following with your starting path
+        String startPath = "./exampleFiles";
+
+        List<Path> jsTsFiles = findJsTsFiles(startPath);
+        reportPaths(jsTsFiles);
+    }
+
 
     public static List<Path> findJsTsFiles(String startPath) throws IOException {
         Path start = Paths.get(startPath);
@@ -15,22 +24,17 @@ public class MainFindJSFiles {
         // Using Files.walk to efficiently traverse the file tree
         try (Stream<Path> stream = Files.walk(start)) {
             return stream
-                    .filter(Files::isRegularFile) // Only consider regular files
+                    .filter(Files::isRegularFile)
                     .filter(MainFindJSFiles::isJSOrTSFile)
                     .toList();
-
         }
     }
-
 
     private static boolean isJSOrTSFile(Path path) {
         return path.toString().endsWith(".js") || path.toString().endsWith(".ts");
     }
-    public static void main(String[] args) throws IOException {
-        String startPath = "/path/to/your/directory"; // Replace with your starting path
-        List<Path> jsTsFiles = findJsTsFiles(startPath);
-        reportPaths(jsTsFiles);
-    }
+
+
 
     private static void reportPaths(List<Path> jsTsFiles) {
         System.out.println("Found " + jsTsFiles.size() + " JS/TS files:");
@@ -38,5 +42,6 @@ public class MainFindJSFiles {
             System.out.println(file);
         }
     }
+
 
 }
